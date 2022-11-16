@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="calculator.js"></script>
+    <style>
+        .h1{
+            margin-left: 50%;
+        }
+    </style>
+</head>
+<body>
+    <form name="control">
+        <h1 id="numberTotal">0</h1>
+        <input type="button" value="0" id="number0" onclick="addZero()">
+        <input type="button" value="1" id="number1" onclick="addOne()">
+        <input type="button" value="2" id="number2" onclick="addTwo()">
+        <input type="button" value="3" id="number3" onclick="addThree()">
+        <input type="button" value="4" id="number4" onclick="addFour()">
+        <input type="button" value="5" id="number5" onclick="addFive()">
+        <input type="button" value="6" id="number6" onclick="addSix()">
+        <input type="button" value="7" id="number7" onclick="addSeven()">
+        <input type="button" value="8" id="number8" onclick="addEight()">
+        <input type="button" value="9" id="number9" onclick="addNine()">
+        <input type="button" value="*" id="muliply" onclick="addMultiply()">
+        <input type="button" value="/" id="divide" onclick="addDivide()">
+        <input type="button" value="+" id="add" onclick="addAdd()">
+        <input type="button" value="-" id="subtract" onclick="addSubtract()">
+        <input type="button" value="C" id="clear" onclick="addClear()">
+        <input type="button" value="=" onclick="totalInput()">
+    </form>
+</body>
+</html>

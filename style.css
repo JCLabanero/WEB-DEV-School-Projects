@@ -1,0 +1,26 @@
+div.first{
+    background-color: red;
+    display: block;
+    position: relative;
+    width: 300px;
+    height: auto;
+    top: 50vh;
+    transform: translate(0, -50%);
+    padding: 16px;
+}
+.centerH{
+    margin: auto;
+}
+input{
+    display: block;
+    position: static;
+    margin: auto;
+    margin-top: 8px;
+}
+h1{
+    display: block;
+    position: relative;
+    margin: 0px;
+    left: 50%;
+    transform: translate(-17%,0);
+}
