@@ -1,3 +1,24 @@
+var thisIsArray = ["12046,Hanie,Gabay,BSIT","12050,Karla,Primo,BSM","12051,Gelanne,Teodoro,BIT/CT","12052,Eris,Ocado,BEED","12057,Albert,Reyes,BSIT","12060,Ruben,Ramos,BIT/FT"];
+
+function searchID(){
+    var idNumber = prompt("Enter the ID that will be edited","12345");
+    var cntr=0;
+    while(cntr<thisIsArray.length){
+        var arr = thisIsArray[cntr].split(",");
+        // document.write(cntr+" "+arr[0]+"<br>");
+        if(arr[0]==idNumber)
+            return cntr;
+        cntr++;
+    }
+    alert("ID doesn't exist");
+    return -1;
+}
+function editData(){
+    var index = searchID();
+    if(index<0)
+        return false;
+    var selectToChange = prompt("Choose what to edit:[1]ID[2]First Name[3]Last Name[4]Course");
+}
 
 function closeAndReturn(){
     
