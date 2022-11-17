@@ -6,8 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="unit 3 lesson 5 try this on your own.js"></script>
+    <style>
+        p{
+            display: inline;
+            margin-left: 10px;
+        }
+        #i01,#i02,#i03,#i04{
+            position:absolute;
+            left: 170px;
+        }
+    </style>
 </head>
-<body onload="addFunction()">
-    
+<body>
+    <form name="addForm">
+        <p>ID: </p>
+        <input type="text" name="ID" id="i01">
+        <br><p>First Name: </p>
+        <input type="text" name="fName" id="i02">
+        <br><p>Last Name: </p>
+        <input type="text" name="lName" id="i03">
+        <br><p>Course: </p>
+        <input type="text" name="course" id="i04">
+        <br>
+        <input type="submit" value="Submit" onclick="addFunction()">
+        <input type="reset" value="reset">
+    </form>
 </body>
 </html>
