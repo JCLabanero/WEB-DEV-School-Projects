@@ -46,12 +46,13 @@ function addFunction(){
     var inputFName = addForm.i02.value;
     var inputLName = addForm.i03.value;
     var inputCourse = addForm.i04.value;
-    var hold;
-    thisIsArray.push(inputID+","+inputFName+","+inputLName+","+inputCourse);
-    for(var a=0; a<thisIsArray.length; a++){
-        hold = thisIsArray[a]+"\n";
-    }
+    // thisIsArray.push(inputID+","+inputFName+","+inputLName+","+inputCourse);
+    // for(var a=0; a<thisIsArray.length; a++){
+    //     hold = thisIsArray[a]+"\n";
+    // }
+    saveLocalData(inputID+","+inputFName+","+inputLName+","+inputCourse);
     insertData(inputID,inputFName,inputLName,inputCourse);
+
     // var inputID = prompt("Input ID number: ", "12345");
     // var inputFName = prompt("Input First Name: ", "John");
     // var inputLName = prompt("Input Last Name: ", "Labanero");
@@ -62,7 +63,25 @@ function addFunction(){
     //     insertData(inputID,inputFName,inputLName,inputCourse);
     // }
 }
-function insertData(id,fname,lname,course){
+function saveLocalData(newData){
+    if(localStorage.getItem('data')==null)
+        localStorage.setItem('data','[]');
+
+    var oldData = JSON.parse(localStorage.getItem('data'));
+    oldData.push(newData);
+
+    localStorage.setItem('data',JSON.stringify(oldData));
+}
+function viewLocalData(){
+    if(localStorage.getItem('data') != null){
+        var storedData = JSON.parse(localStorage.getItem('data'));
+    }
+}
+function initialLoad(){
+    if(localStorage.getItem('data')==null)
+        localStorage.setItem('data','["12046,Hanie,Gabay,BSIT","12050,Karla,Primo,BSM","12051,Gelanne,Teodoro,BIT/CT","12052,Eris,Ocado,BEED","12057,Albert,Reyes,BSIT","12060,Ruben,Ramos,BIT/FT"]');
+}
+function createData(students){
     let table = document.getElementById("table");
     var row = table.insertRow();
     var cell0 = row.insertCell(0);
