@@ -47,6 +47,7 @@ function addFunction(){
     var inputFName = addForm.i02.value;
     var inputLName = addForm.i03.value;
     var inputCourse = addForm.i04.value;
+    thisIsArray.push(inputID+","+inputFName+","+inputLName+","+inputCourse);
     insertData(inputID,inputFName,inputLName,inputCourse);
     // var inputID = prompt("Input ID number: ", "12345");
     // var inputFName = prompt("Input First Name: ", "John");
