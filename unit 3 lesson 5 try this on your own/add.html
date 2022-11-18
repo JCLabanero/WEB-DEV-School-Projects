@@ -7,28 +7,23 @@
     <title>Document</title>
     <script src="unit 3 lesson 5 try this on your own.js"></script>
     <style>
-        p{
+        /* p{
             display: inline;
             margin-left: 10px;
         }
         #i01,#i02,#i03,#i04{
             position:absolute;
             left: 170px;
-        }
+        } */
     </style>
 </head>
 <body>
     <form name="addForm">
-        <p>ID: </p>
-        <input type="text" name="ID" id="i01">
-        <br><p>First Name: </p>
-        <input type="text" name="fName" id="i02">
-        <br><p>Last Name: </p>
-        <input type="text" name="lName" id="i03">
-        <br><p>Course: </p>
-        <input type="text" name="course" id="i04">
-        <br>
-        <input type="submit" value="Submit" onclick="addFunction()">
+        <label for="i01">ID: </label><input type="text" id="i01"><br>
+        <label for="i02">First Name: </label><input type="text" id="i02"><br>
+        <label for="i03">Last Name: </label><input type="text" id="i03"><br>
+        <label for="i04">Course: </label><input type="text" id="i04"><br>
+        <button type="button" onclick="addFunction()">Submit</button>
         <input type="reset" value="reset">
     </form>
 </body>
