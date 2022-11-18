@@ -45,30 +45,56 @@ function addFunction(){
 
     alert(newData+" added successfully!");
 }
-function editFuntion(){
-    if(searchByID>0)
-        return;
+// function editFuntion(){
+//     if(input<0)
+//         return;
 
-    if(localStorage.getItem('data')==null)
-        localStorage.setItem('data','[]');
+//     var inputID = addForm.i01.value;
+//     var inputFName = addForm.i02.value;
+//     var inputLName = addForm.i03.value;
+//     var inputCourse = addForm.i04.value;
         
-    var oldData = JSON.parse(localStorage.getItem('data'));
-    
-}
+//     var oldData = JSON.parse(localStorage.getItem('data'));
+
+//     oldData[input] = inputID +","+inputFName+","+inputLName+","+inputCourse;
+
+//     localStorage.setItem('data',JSON.stringify(oldData));
+// }
 function searchByID(){
+
     if(localStorage.getItem('data')==null)
         localStorage.setItem('data','[]');
         
     var oldData = JSON.parse(localStorage.getItem('data'));
 
     var search = prompt("Enter the ID that will be edited","12345");
+    var index;
 
     for(var a=0; a<oldData.length;a++){
-        var arr = storedData[a].split(",");
-        if(search==arr[0])
-            return a;
+        var arr = oldData[a].split(",");
+        if(search==arr[0]){
+            index=a;
+            break;
+        }
     }
-    return -1;
+
+    alert(index);
+    if(index<0)
+        return;
+
+    var oldData = JSON.parse(localStorage.getItem('data'));
+
+    var inputID = addForm.i01.value;
+    var inputFName = addForm.i02.value;
+    var inputLName = addForm.i03.value;
+    var inputCourse = addForm.i04.value;
+
+
+    oldData[index] = inputID +","+inputFName+","+inputLName+","+inputCourse;
+    
+    alert(oldData[index]);
+
+    // localStorage.setItem('data',JSON.stringify(oldData));
 }
 // function viewLocalData(){
 //     if(localStorage.getItem('data') != null){
