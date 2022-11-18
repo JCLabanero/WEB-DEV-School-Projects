@@ -10,7 +10,8 @@ for(a=0; a<3; a++){
     }
 }
 
-document.write(temp[0]+" "+temp[1]+" "+temp[2])+"<br>";
+
+// document.write(temp[0]+" "+temp[1]+" "+temp[2])+"<br>";
 
 if(temp[0]==temp[1]){
     document.write("true");
@@ -22,4 +23,8 @@ if(temp[2]==temp[3]){
     document.write("true");
 } else {
     document.write("false");
+}
+function changeValue(){
+    var fnumberHTML = document.querySelector("#f1");
+    fnumberHTML.innerHTML+=fnumber+"";
 }
