@@ -24,23 +24,6 @@
 //     var toChange = prompt("");
 // }
 
-// function closeAndReturn(){
-//     for(var a=0; a<thisIsArray.length;a++){
-//         var cut = thisIsArray[a].split(",");
-//         insertData(cut[0],cut[1],cut[2],cut[3]);
-//         // var row = table.insertRow();
-//         // var cell0 = row.insertCell(0);
-//         // var cell1 = row.insertCell(1);
-//         // var cell2 = row.insertCell(2);
-//         // var cell3 = row.insertCell(3);
-//         // cell0.innerHTML = cut[0];
-//         // cell1.innerHTML = cut[1];
-//         // cell2.innerHTML = cut[2];
-//         // cell3.innerHTML = cut[3];
-//     }
-// }
-//
-
 function addFunction(){
     var inputID = addForm.i01.value;
     var inputFName = addForm.i02.value;
@@ -50,20 +33,8 @@ function addFunction(){
     // for(var a=0; a<thisIsArray.length; a++){
     //     hold = thisIsArray[a]+"\n";
     // }
-    saveLocalData(inputID+","+inputFName+","+inputLName+","+inputCourse);
-    insertData(inputID,inputFName,inputLName,inputCourse);
 
-    // var inputID = prompt("Input ID number: ", "12345");
-    // var inputFName = prompt("Input First Name: ", "John");
-    // var inputLName = prompt("Input Last Name: ", "Labanero");
-    // var inputCourse = prompt("Input Course: ", "BSIT");
-    // var check = confirm("Are you sure you want to add?");
-    // if(check){
-    //     window.close();
-    //     insertData(inputID,inputFName,inputLName,inputCourse);
-    // }
-}
-function saveLocalData(newData){
+    var newData = inputID+","+inputFName+","+inputLName+","+inputCourse;
     if(localStorage.getItem('data')==null)
         localStorage.setItem('data','[]');
 
@@ -71,17 +42,49 @@ function saveLocalData(newData){
     oldData.push(newData);
 
     localStorage.setItem('data',JSON.stringify(oldData));
+
+    alert(newData+" added successfully!");
 }
-function viewLocalData(){
-    if(localStorage.getItem('data') != null){
-        var storedData = JSON.parse(localStorage.getItem('data'));
+function editFuntion(){
+    if(searchByID>0)
+        return;
+
+    if(localStorage.getItem('data')==null)
+        localStorage.setItem('data','[]');
+        
+    var oldData = JSON.parse(localStorage.getItem('data'));
+    
+}
+function searchByID(){
+    if(localStorage.getItem('data')==null)
+        localStorage.setItem('data','[]');
+        
+    var oldData = JSON.parse(localStorage.getItem('data'));
+
+    var search = prompt("Enter the ID that will be edited","12345");
+
+    for(var a=0; a<oldData.length;a++){
+        var arr = storedData[a].split(",");
+        if(search==arr[0])
+            return a;
     }
+    return -1;
 }
+// function viewLocalData(){
+//     if(localStorage.getItem('data') != null){
+//         var storedData = JSON.parse(localStorage.getItem('data'));
+//     }
+// }
 function initialLoad(){
     if(localStorage.getItem('data')==null)
         localStorage.setItem('data','["12046,Hanie,Gabay,BSIT","12050,Karla,Primo,BSM","12051,Gelanne,Teodoro,BIT/CT","12052,Eris,Ocado,BEED","12057,Albert,Reyes,BSIT","12060,Ruben,Ramos,BIT/FT"]');
+    var storedData = JSON.parse(localStorage.getItem('data'));
+    for(var a=0; a<storedData.length; a++){
+        var arr = storedData[a].split(",");
+        updateTable(arr[0],arr[1],arr[2],arr[3]);
+    }
 }
-function createData(students){
+function updateTable(id,fname,lname,course){
     let table = document.getElementById("table");
     var row = table.insertRow();
     var cell0 = row.insertCell(0);

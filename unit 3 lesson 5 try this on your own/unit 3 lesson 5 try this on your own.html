@@ -6,22 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="unit 3 lesson 5 try this on your own.js"></script>
-    <!-- <script>
-        function add(){
-            let table = document.getElementById("table");
-            var row = table.insertRow();
-            var cell = row.insertCell(0);
-            cell.innerHTML = "123";
-        }
-    </script> -->
-    <style>
-    table,td,th{
-        border: 1px solid;
-        border-collapse:separate;
-    }
-    </style>
+    <link rel="stylesheet" href="unit 3 lesson 5 try this on your own.css">
 </head>
-<body  onload="closeAndReturn()">
+<body  onload="initialLoad()">
     <table id="table">
         <tr>
             <th>ID</th>
@@ -29,55 +16,9 @@
             <th>LastName</th>
             <th>Course</th>
         </tr>
-        <!-- <tr>
-            <td>12046</td>
-            <td>Hanie</td>
-            <td>Gabay</td>
-            <td>BSIT</td>
-        </tr>
-        <tr>
-            <td>12050</td>
-            <td>Karla</td>
-            <td>Primo</td>
-            <td>BSM</td>
-        </tr>
-        <tr>
-            <td>12051</td>
-            <td>Gelanne</td>
-            <td>Teodoro</td>
-            <td>BIT/CT</td>
-        </tr>
-        <tr>
-            <td>12052</td>
-            <td>Eris</td>
-            <td>Ocado</td>
-            <td>BEED</td>
-        </tr>
-        <tr>
-            <td>12057</td>
-            <td>Albert</td>
-            <td>Reyes</td>
-            <td>BSIT</td>
-        </tr>
-        <tr>
-            <td>12060</td>
-            <td>Ruben</td>
-            <td>Ramos</td>
-            <td>BIT/FT</td>
-        </tr> -->
     </table>
     <br><button onclick="window.open('file://C:/Users/Gifer/Documents/Programming Projects/WEB-DEV-School-Projects/unit 3 lesson 5 try this on your own/add.html')">ADD</button>
-    <!-- <br><button onclick="location.href='add.html'">ADD</button> -->
-    <br><br><button onclick="location.href='edit.html'">EDIT</button>
+    <br><br><button onclick="window.open('file://C:/Users/Gifer/Documents/Programming Projects/WEB-DEV-School-Projects/unit 3 lesson 5 try this on your own/edit.html')">EDIT</button>
     <br><br><button>DELETE</button>
-    <form name="addForm">
-        <label for="i01">ID: </label><input type="text" id="i01"><br>
-        <label for="i02">First Name: </label><input type="text" id="i02"><br>
-        <label for="i03">Last Name: </label><input type="text" id="i03"><br>
-        <label for="i04">Course: </label><input type="text" id="i04"><br>
-        <button type="button" onclick="createData()">Submit</button>
-        <button type="button" onclick="viewLocalData()">View</button>
-        <input type="reset" value="reset">
-    </form>
 </body>
 </html>
