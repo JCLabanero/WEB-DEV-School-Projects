@@ -1,36 +1,3 @@
-// var thisIsArray = ["12046,Hanie,Gabay,BSIT","12050,Karla,Primo,BSM","12051,Gelanne,Teodoro,BIT/CT","12052,Eris,Ocado,BEED","12057,Albert,Reyes,BSIT","12060,Ruben,Ramos,BIT/FT"];
-
-
-// function searchID(){
-//     var idNumber = prompt("Enter the ID that will be edited","12345");
-//     var cntr=0;
-//     while(cntr<thisIsArray.length){
-//         var arr = thisIsArray[cntr].split(",");
-//         // document.write(cntr+" "+arr[0]+"<br>");
-//         if(arr[0]==idNumber)
-//             return cntr;
-//         cntr++;
-//     }
-//     alert("ID doesn't exist");
-//     return -1;
-// }
-// function editData(){
-//     var index = searchID();
-//     if(index<0)
-//         return false;
-//     var selectToChange = prompt("Choose what to edit:\n[1]ID\n[2]First Name\n[3]Last Name\n[4]Course");
-
-    
-//     var toChange = prompt("");
-// }
-// function loadArray(){
-//     alert("toLoad");
-//     for(var a=0; a<thisIsArray.length;a++){
-//         var arr = thisIsArray[a].split(",");
-//         updateTable(arr[0],arr[1],arr[2],arr[3]);
-//     }
-// }
-
 function addFunction(){
     var inputID = addForm.i01.value;
     var inputFName = addForm.i02.value;
@@ -94,4 +61,42 @@ function updateTable(id,fname,lname,course){
     cell1.innerHTML = fname;
     cell2.innerHTML = lname;
     cell3.innerHTML = course;
+}
+function deleteFunction(){
+    var inputID = addForm.i00.value;
+    
+    var oldData = JSON.parse(localStorage.getItem('data'));
+
+    var index = -2;
+    for(var a=0;a<oldData.length;a++){
+        var arr = oldData[a].split(",");
+        if(inputID==arr[0]){
+            index=a;
+            break;
+        }
+    }
+    if(index<0)
+        return;
+    oldData.splice(index,1);
+
+    localStorage.setItem('data',JSON.stringify(oldData));
+
+    alert(inputID+" removed successfully!");
+}
+function deleteLast(){
+    var oldData = JSON.parse(localStorage.getItem('data'));
+    oldData.pop();
+
+    localStorage.setItem('data',JSON.stringify(oldData));
+
+    alert("Last data removed successfully!");
+}
+function deleteFirst(){
+    var oldData = JSON.parse(localStorage.getItem('data'));
+    oldData.shift();
+
+    localStorage.setItem('data',JSON.stringify(oldData));
+
+    alert("First data removed successfully!");
+
 }
