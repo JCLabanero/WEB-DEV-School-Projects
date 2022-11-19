@@ -5,8 +5,6 @@ function addFunction(){
     var inputCourse = addForm.i04.value;
 
     var newData = inputID+","+inputFName+","+inputLName+","+inputCourse;
-    if(localStorage.getItem('data')==null)
-        localStorage.setItem('data','[]');
 
     var oldData = JSON.parse(localStorage.getItem('data'));
     oldData.push(newData);
@@ -40,6 +38,7 @@ function editFunction(){
     oldData[index] = newData;
 
     localStorage.setItem('data',JSON.stringify(oldData));
+    alert("Number "+(index+1)+" has been edited to "+newData+" successfully!");
 }
 function initialLoad(){
     if(localStorage.getItem('data')==null)
